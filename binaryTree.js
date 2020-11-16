@@ -1,7 +1,4 @@
-// * Binary Trees in comparison to Hash Tables, preserve relationships
-
-//
-
+// --------------- BINARY SEARCH TREES ---------------
 // * Perfect Binary Tree - a tree with no gaps in the tree;
 // ** really efficient
 // ** the number of leaf nodes doubles on each level
@@ -209,3 +206,49 @@ function traverse(node) {
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
 }
+
+// --------------- BALANCING TREES ---------------
+// AVL Trees
+// How they work:  https://medium.com/basecs/the-little-avl-tree-that-could-86a3cae410c7
+// Visualization: https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
+// Adelson-Velsky and Landis first introduced the idea behind them in 1962,
+// in a paper the pair co - authored and published called, “An algorithm for the organization of information”.
+
+// Red Black Trees
+// How they work: https://medium.com/basecs/painting-nodes-black-with-red-black-trees-60eacb2be9a5
+// Visualization: https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+/**
+ * Generally speaking, the four rules of a red-black tree are always presented in the same order, as follows:
+ * 1. Every single node in the tree must be either red or black.
+ * 2. The root node of the tree must always be black.
+ * 3. Two red nodes can never appear consecutively, one after another
+ * a red node must always be preceded by a black node(it must have a black parent node),
+ * and a red node must always have black children nodes.
+ *  4. Every branch path — the path from a root node to an empty (null)
+ * leaf node — must pass through the exact same number of black nodes.
+ * A branch path from the root to an empty leaf node is also known as
+ * an unsuccessful search path, since it represents the path we would
+ * take if we were to search for a node that didn’t exist within the tree.
+
+ */
+
+/**
+ * --------------- BINARY HEAP ---------------
+ * Binary Heap - every node on the top level has a greater value than any node on the lower levels
+ *  Good for doing comparative operations (give me all elements < of some value
+ * -- Used in data storag
+ * -- Max Heap - root node is the bigges
+ * -- Min Heap - root node is the smallest
+ * Better than O(n)
+ * Priority
+ * Flexible Size
+ * Fast insert
+ */
+
+// ------------ TRIE ------------
+/**
+ * GOOD FOR SEARCHING WORDS INA DICTIONARY
+ * PROVIDING AUTO-SUGGESTONS
+ * IF WE KNOW THE SIZE OF THE WORD, WE KNOW HOW MANY 
+ * WE AVOID STORING REUSED VALUES MULTIPLE TIMES 
+ */ 
