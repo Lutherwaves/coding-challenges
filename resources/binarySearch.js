@@ -1,3 +1,10 @@
+/**
+ * This is a basic implementation template for a binary search
+ * @param {*} arr 
+ * @param {*} x 
+ * @param {*} start 
+ * @param {*} end 
+ */
 let recursiveFunction = (arr, x, start, end) => {
   // Base Condition
   if (start > end) return false;

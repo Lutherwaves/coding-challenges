@@ -1,14 +1,21 @@
-// staircase
-// n steps to reach the top
-// each time either 1 or 2 steps
-// how many distinct ways to climb the top
-// n = 2
-// 1. way  1 step + 1 step
-// 2. way is 2 steps
-// ==> 2 ways
-// 1<= n <= 45
-// Variant 1
+/**
+ * Given a staircase, calculate the distinct number of ways it can be climbed
+ * n steps to reach the top
+ * each time either 1 or 2 steps
+ * how many distinct ways to climb the top
+ * Example:
+ *  n = 2
+ * 1. way  1 step + 1 step
+ * 2. way is 2 steps
+ * ==> 2 ways
+ *  1<= n <= 45
+ *
+ * Hint: Fibonacci sequence
+ */
+
+// First solution
 var climbStairs = (n) => {
+  //
   let fseq = [0, 1, 1];
 
   for (let i = 3; i <= n + 1; i++) {
@@ -17,7 +24,7 @@ var climbStairs = (n) => {
   return fseq[n + 1];
 };
 
-// Variant 2
+// Second solution (using Memoization)
 let cache = {};
 var climbStairs = (n) => {
   // Base case
@@ -29,5 +36,3 @@ var climbStairs = (n) => {
   }
   return cache[n];
 };
-
-climbStairs(5);

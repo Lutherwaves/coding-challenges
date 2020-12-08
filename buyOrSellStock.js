@@ -1,17 +1,18 @@
-// an array = [1,2,3,4,5], the stock on i-th day = array[i]
-// if one transaction per type (buy or sell), design an algorithm to find the maximum profit
+/**
+ * Buy or Sell Stock Challenge to find the maximum profit, given an array of available stocks
+ *
+ * an array = [1,2,3,4,5], the stock on i-th day = array[i]
+ * if one transaction per type (buy or sell), design an algorithm to find the maximum profit
+ *
+ * the maximum profit is achieved when we sell when the price is the highest, and buy when price is the lowest
+ * Example: [1,2,3,4,5]
+ * We check [1] - currentProfit = -1 if we buy
+ * We check [1,2] - currentProfit if we buy on 0 and sell on 1 = 1
+ * We check [1,2,3] - currentProfit = Math.max(prevProfit, currentProfit)
+ */
 
-// the maximum profit is achieved when we sell when the price is the highest, and buy when price is the lowest
-
-// Brute force
-// Iterate over each element, buy at the lowest price possible, sell only AFTER you have bought something
-
-// Example: [1,2,3,4,5]
-// We check [1] - currentProfit = -1 if we buy
-// We check [1,2] - currentProfit if we buy on 0 and sell on 1 = 1
-// We check [1,2,3] - currentProfit = Math.max(prevProfit, currentProfit)
-
-var maxProfit2 = (prices) => {
+// First solution
+var maxProfit = (prices) => {
   // If prices is empty OR === null, return 0, again no transaction
   if (prices === null || prices.length === 0) {
     return 0;
@@ -30,7 +31,8 @@ var maxProfit2 = (prices) => {
   return currentMax;
 };
 
-var maxProfit2 = (prices) => {
+// Second solution
+var maxProfit = (prices) => {
   // If prices is empty OR === null, return 0, again no transaction
   if (prices === null || prices.length === 0) {
     return 0;
@@ -53,6 +55,7 @@ var maxProfit2 = (prices) => {
     })[prices.length - 1];
 };
 
+// Third solution
 var maxProfit = (prices) => {
   let length = prices.length;
   cost = 0;
@@ -75,10 +78,3 @@ var maxProfit = (prices) => {
   }
   return maxcost;
 };
-
-// console.log(maxProfit([7,1,5,3,6,4]))
-maxProfit([7, 6, 5, 3, 2, 1]);
-// maxProfit([1,2, 4])
-// maxProfit([1,4])
-// maxProfit([1,2])
-// console.log(maxProfit([7,6,4,3,1]))

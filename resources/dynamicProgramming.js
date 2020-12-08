@@ -1,3 +1,7 @@
+/**
+ * Info about using dynamic programming via cache
+ */
+
 let calculations1 = 0;
 let calculations2 = 0;
 let cache = {};

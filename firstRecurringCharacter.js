@@ -1,18 +1,31 @@
+/**
+ * Find the first recurring character and return it
+ */
+
+// First Solution (Brute force)
 var firstRecurringCharacter = (array) => {
-  // check input
+  // Base case
   if (!array.length == new Set(array).size) {
     console.log('No recurring characters');
   }
-  // Brute force
-  // for (let i =0; i < array.length; i++) {
-  //   for (let j = i+1; j < array.length; j++) {
-  //     if(array[i] === array[j]) {
-  //       return array[i];
-  //     }
 
-  //   }
-  // } // O(n^2)
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] === array[j]) {
+        return array[i];
+      }
+    }
+  }
 
+  return undefined;
+};
+
+// Second soluton (Object)
+var firstRecurringCharacter = (array) => {
+  // Base case
+  if (!array.length == new Set(array).size) {
+    console.log('No recurring characters');
+  }
   // Object approach
   let counts = {};
   for (let i = 0; i < array.length; i++) {
@@ -23,7 +36,16 @@ var firstRecurringCharacter = (array) => {
     }
   }
 
-  // Map approach
+  return undefined;
+};
+
+// Third solution (Map)
+var firstRecurringCharacter = (array) => {
+  // Base case
+  if (!array.length == new Set(array).size) {
+    console.log('No recurring characters');
+  }
+
   let countsMap = new Map();
   for (let i = 0; i < array.length; i++) {
     if (countsMap.has(array[i])) {
